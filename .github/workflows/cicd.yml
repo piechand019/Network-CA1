@@ -13,6 +13,12 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v3
 
+    - name: Debug Directory Contents
+      run: |
+        echo "Current directory: $(pwd)"
+        ls -al
+        ls -al ./Network-CA1
+
     - name: Set up Docker Buildx
       uses: docker/setup-buildx-action@v2
 
@@ -24,7 +30,7 @@ jobs:
 
     - name: Build and push Docker image
       run: |
-        docker build -t ${{ secrets.DOCKER_USERNAME }}/app:latest Network-CA1/.github/workflows/Dockerfile
+        docker build -t ${{ secrets.DOCKER_USERNAME }}/app:latest -f ./Network-CA1/Dockerfile ./Network-CA1
         docker push ${{ secrets.DOCKER_USERNAME }}/app:latest
 
   deploy:
@@ -42,7 +48,7 @@ jobs:
 
     - name: Deploy Docker container to EC2
       run: |
-        ssh -o StrictHostKeyChecking=no ubuntu@54.170.110.187 \
+        ssh -o StrictHostKeyChecking=no ubuntu@34.243.146.197 \
         'sudo docker pull ${{ secrets.DOCKER_USERNAME }}/app:latest && \
          sudo docker stop app || true && \
          sudo docker rm app || true && \
