@@ -21,7 +21,7 @@ jobs:
     # Build the Docker image
     - name: Build Docker image
       run: |
-        docker build -t your-dockerhub-username/your-app:latest .
+        docker build -t piechand19/network_ca1:latest .
 
     # Log in to Docker Hub
     - name: Log in to Docker Hub
