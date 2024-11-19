@@ -33,7 +33,7 @@ jobs:
     # Push the Docker image to Docker Hub
     - name: Push Docker image
       run: |
-        docker push your-dockerhub-username/your-app:latest
+        docker push piechand19/network_ca1:latest
 
     # Deploy to EC2 instance
     - name: Deploy to EC2
