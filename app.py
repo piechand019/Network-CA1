@@ -9,7 +9,7 @@ def home():
                 <title>CI/CD</title>
                 </head>
                 <body>
-                <h1> Hello World, We have successfully completed the task. From Chandni, Avi and Himanshu. </h1>
+                <h1> Hello World We have successfully completed the task. From Chandni, Avi and Himanshu. </h1>
                 </body>
                 </html>'''
 
