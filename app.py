@@ -9,7 +9,7 @@ def home():
                 <title>CI/CD</title>
                 </head>
                 <body>
-                <h1> Hello World We have successfully completed the given task for CA1. From Chandni, Avi and Himanshu. </h1>
+                <h1> Live Demo </h1>
                 </body>
                 </html>'''
 
